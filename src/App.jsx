@@ -67,6 +67,7 @@ function Timeline() {
 
 function VideoDialog({ project, onClose }) {
   const ref = useRef(null);
+
   useEffect(() => {
     if (project && !ref.current.open) ref.current.showModal();
   }, [project]);
@@ -79,46 +80,41 @@ function VideoDialog({ project, onClose }) {
     >
       {project && (
         <>
-          {project.file ? (
-            <video
-              src={project.file}
-              poster={project.thumb || undefined}
-              controls
-              preload="metadata"
-              playsInline
+          {project.link ? (
+            <iframe
+              src={project.link}
+              title={project.title}
               style={{
                 width: "100%",
-                maxHeight: "70vh",
-                objectFit: "contain",
+                height: "70vh",
+                border: "0",
                 display: "block",
               }}
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
             />
           ) : (
             <Thumb p={project} />
           )}
+
           <div className="dbody">
             <h3>{project.title}</h3>
             <p>{project.description}</p>
+
             <dl>
               <dt>Category</dt>
               <dd>{project.category}</dd>
+
               <dt>Published</dt>
               <dd>{project.date}</dd>
+
               <dt>Tools</dt>
               <dd>{project.software.join(", ")}</dd>
+
               <dt>Tags</dt>
               <dd>{project.tags.join(", ")}</dd>
             </dl>
-            {project.link && (
-              <a
-                className="btn"
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Watch video
-              </a>
-            )}
+
             <button className="btn ghost" onClick={() => ref.current.close()}>
               Close
             </button>
