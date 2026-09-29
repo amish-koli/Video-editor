@@ -26,7 +26,7 @@ export const PROJECTS = [
     duration: "4:05",
     software: ["Premiere Pro"],
     link: "https://www.youtube.com/embed/lmtL69PSzKo",
-    thumb: "../src/thumb/one.png",
+    thumb: "https://i.pinimg.com/736x/fb/8d/bf/fb8dbfb8a20e1ac541bcf7a3636c168f.jpg",
     hue: 340,
   },
   {
@@ -39,7 +39,7 @@ export const PROJECTS = [
     duration: "0:36",
     software: ["Premiere Pro"],
     link: "https://www.youtube.com/embed/KCBMfQeB3Sw",
-    thumb: "../src/thumb/two.png",
+    thumb: "https://i.pinimg.com/736x/4e/95/01/4e9501288e43e596f6f85b035e07fc38.jpg",
     hue: 190,
   },
   {
@@ -52,7 +52,7 @@ export const PROJECTS = [
     duration: "0:15",
     software: ["After Effects", "Premiere Pro"],
     link: "https://www.youtube.com/embed/iThdqAXgkUk",
-    thumb: "../src/thumb/third.png",
+    thumb: "https://i.pinimg.com/736x/5d/3f/05/5d3f058af642f5bfbb41608acf82dd14.jpg",
     hue: 270,
   },
 ];
